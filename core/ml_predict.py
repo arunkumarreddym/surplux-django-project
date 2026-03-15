@@ -4,7 +4,17 @@ import os
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-MODEL_PATH = os.path.join(BASE_DIR, "ml", "food_model.pkl")
+import os
+import joblib
+
+MODEL_PATH = "ml/food_model.pkl"
+
+model = None
+
+if os.path.exists(MODEL_PATH):
+    model = joblib.load(MODEL_PATH)
+else:
+    print("ML model not found. Skipping model loading for CI.")
 CATEGORY_ENCODER_PATH = os.path.join(BASE_DIR, "ml", "category_encoder.pkl")
 STORAGE_ENCODER_PATH = os.path.join(BASE_DIR, "ml", "storage_encoder.pkl")
 
