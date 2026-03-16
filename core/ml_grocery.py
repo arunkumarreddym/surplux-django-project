@@ -5,7 +5,7 @@ from datetime import datetime
 
 
 reader = easyocr.Reader(['en'])
-
+#this is jenkins
 
 def read_expiry_and_text(image_path):
     results = reader.readtext(image_path, detail=0)
