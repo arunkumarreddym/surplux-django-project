@@ -8,7 +8,7 @@ from .models import Food, Grocery, Profile, NGO, FoodClaim
 from .utils import calculate_discount
 from .ml_predict import predict_shelf_life
 
-
+# jenkins
 # ---------------- HOME ----------------
 
 def home(request):
